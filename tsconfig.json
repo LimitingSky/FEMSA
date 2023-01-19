@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"],
-      "tests": ["__tests__/*"],
-      "@components/*": ["src/components/*"],
+      "tests": ["./__tests__/*"],
+      "components/*": ["./src/core/components/*"],
+      "features/*": ["./src/features/*"],
     }
   }
 }
