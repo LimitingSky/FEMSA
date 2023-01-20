@@ -1,10 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {
-    createNativeStackNavigator,
-    NativeStackNavigationOptions
+  createNativeStackNavigator,
+  NativeStackNavigationOptions
 } from '@react-navigation/native-stack';
+import { DetailScreen } from 'features/detail/screen';
 import { HomeScreen } from 'features/home/screen';
 import * as React from 'react';
+import { ROUTES } from './routes';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,8 +17,9 @@ const options: NativeStackNavigationOptions = {
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={options}>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator screenOptions={options} initialRouteName={ROUTES.DETAIL}>
+        <Stack.Screen name={ROUTES.HOME} component={HomeScreen} />
+        <Stack.Screen name={ROUTES.DETAIL} component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
