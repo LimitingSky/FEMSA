@@ -66,4 +66,13 @@ export const MovementItemStyle = StyleSheet.create({
   moreSymbol: {
     color: 'green',
   },
+  filtersContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  buttonFilter: {
+    width: 170,
+  },
 });

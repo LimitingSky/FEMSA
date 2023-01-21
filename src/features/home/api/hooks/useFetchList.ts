@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export const useFetchList = () => {
   const [data, setData] = useState<ProductsResponse>([]);
+  const [filterData, setFilterData] = useState<ProductsResponse>([]);
   const [total, setTotal] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
   const [, isFetching, handleFetch, error] = useFetch({
@@ -30,6 +31,19 @@ export const useFetchList = () => {
     setData(response);
   };
 
+  const handleFilterData = (is_redeemed: boolean) => {
+    const newFilterData = data.filter(
+      ({is_redemption}) => is_redemption === is_redeemed,
+    );
+    newFilterData.forEach((element, index) => {
+      const newFilterElement = {...element};
+      newFilterElement.isFirst = index === 0;
+      newFilterElement.isLast = newFilterData.length - 1 === index;
+      newFilterData[index] = newFilterElement;
+    });
+    setFilterData(newFilterData);
+  };
+
   const init = async () => {
     try {
       const response = await handleFetch();
@@ -48,5 +62,5 @@ export const useFetchList = () => {
     setIsLoading(isFetching);
   }, [isFetching]);
 
-  return {isLoading, data, total};
+  return {isLoading, data, total, handleFilterData, filterData};
 };

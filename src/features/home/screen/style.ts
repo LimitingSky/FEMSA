@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const HomeScreenStyles = StyleSheet.create({
-  wrapper: {
+  list: {
     paddingTop: 20,
     paddingHorizontal: 20,
   },

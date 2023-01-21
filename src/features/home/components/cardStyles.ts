@@ -35,7 +35,7 @@ export const CardStyle = StyleSheet.create({
     marginTop: 8,
     fontStyle: 'normal',
     fontWeight: '800',
-    fontSize: 32,
+    fontSize: 28,
     lineHeight: 44,
     color: 'white',
   },
