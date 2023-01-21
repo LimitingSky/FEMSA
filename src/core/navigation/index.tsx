@@ -17,7 +17,7 @@ const options: NativeStackNavigationOptions = {
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={options} initialRouteName={ROUTES.DETAIL}>
+      <Stack.Navigator screenOptions={options} initialRouteName={ROUTES.HOME}>
         <Stack.Screen name={ROUTES.HOME} component={HomeScreen} />
         <Stack.Screen name={ROUTES.DETAIL} component={DetailScreen} />
       </Stack.Navigator>

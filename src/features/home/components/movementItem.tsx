@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { MovementItemProps } from '../models/components';
 import { MovementItemStyle } from './movementItemStyles';
 
@@ -7,12 +7,13 @@ const style = MovementItemStyle;
 
 export const MovementItem: FC<MovementItemProps> = props => {
   return (
-    <View
+    <TouchableOpacity
       style={[
         style.wrapper,
         props.isFirst && style.firstElement,
         props.isLast && style.lastElement,
-      ]}>
+      ]}
+      onPress={props.onPress}>
       <View style={style.leftColumn}>
         <Image style={style.image} source={{uri: props.image}} />
         <View>
@@ -30,7 +31,7 @@ export const MovementItem: FC<MovementItemProps> = props => {
         </Text>
         <Text>{'>'}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -37,5 +37,6 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 33,
     color: '#000000',
+    marginBottom: 50,
   },
 });
