@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignSelf: 'center',
     marginBottom: 32,
+    marginTop: 20,
   },
   subtitle: {
     fontStyle: 'normal',
